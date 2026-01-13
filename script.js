@@ -1,7 +1,7 @@
 // ==============================================
 // CONFIGURATION - CHANGE THIS URL AFTER DEPLOYING BACKEND
 // ==============================================
-const BACKEND_URL = "https://your-backend.onrender.com"; // ← UPDATE THIS AFTER DEPLOYING
+const BACKEND_URL = "https://supreme-yt-downloader-backend-zbl1.onrender.com"; // ← UPDATE THIS AFTER DEPLOYING
 
 // ==============================================
 // STATE MANAGEMENT
