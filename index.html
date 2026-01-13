@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free YouTube Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fab fa-youtube"></i>
+                <h1>YouTube Video Downloader</h1>
+            </div>
+            <p class="subtitle">Free • Fast • Direct Downloads</p>
+        </header>
 
+        <main>
+            <!-- URL Input -->
+            <div class="card">
+                <h2><i class="fas fa-link"></i> Paste YouTube URL</h2>
+                <input type="url" id="videoUrl" 
+                       placeholder="https://www.youtube.com/watch?v=..."
+                       class="url-input">
+                <button onclick="getVideoInfo()" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Get Video Info
+                </button>
+            </div>
+
+            <!-- Video Info (Hidden initially) -->
+            <div class="card" id="videoInfoCard" style="display: none;">
+                <h2><i class="fas fa-film"></i> Video Details</h2>
+                <div class="video-details">
+                    <img id="thumbnail" class="thumbnail" alt="Thumbnail">
+                    <div class="details">
+                        <h3 id="videoTitle">Title will appear here</h3>
+                        <p><i class="fas fa-user"></i> <span id="author">Unknown</span></p>
+                        <p><i class="fas fa-clock"></i> <span id="duration">0:00</span></p>
+                    </div>
+                </div>
+
+                <!-- Quality Selection -->
+                <h3><i class="fas fa-hd"></i> Select Quality</h3>
+                <div class="quality-grid" id="qualityGrid">
+                    <!-- Quality options will appear here -->
+                </div>
+
+                <!-- Download Button -->
+                <div class="download-section">
+                    <button onclick="startDownload()" id="downloadBtn" class="btn btn-download" disabled>
+                        <i class="fas fa-download"></i> Download Video
+                    </button>
+                    <p class="note">
+                        <i class="fas fa-info-circle"></i>
+                        Video will download directly to your device
+                    </p>
+                </div>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="card" id="progressCard" style="display: none;">
+                <h2><i class="fas fa-sync-alt"></i> Download Progress</h2>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="progress-text" id="progressText">0%</div>
+                </div>
+                <div id="statusMessage">Preparing download...</div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 YouTube Downloader • Direct downloads to your device</p>
+            <p class="disclaimer">
+                <i class="fas fa-exclamation-triangle"></i>
+                For personal use only. Respect YouTube's Terms of Service.
+            </p>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
